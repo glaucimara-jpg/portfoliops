@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glau_Croche</title>
+    <style>
+        
+        p{
+            font-size: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #433636;
+        }
+        
+        /* Reset básico para remover margens padrões */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* CORREÇÃO DAS IMAGENS: Agora elas se adaptam a qualquer tela */
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto; /* Centraliza as imagens na tela */
+        }
+
+        /* Estilização da barra de navegação */
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center; /* Centraliza o menu */
+            align-items: center;
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Links do Menu */
+        .navbar-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            flex-wrap: wrap; /* Permite que os links quebrem de linha se não couberem */
+            justify-content: center;
+        }
+
+        .navbar-links a {
+            text-decoration: none;
+            color: #555555;
+            font-size: 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            text-align: center;
+        }
+
+        /* Efeito ao passar o mouse */
+        .navbar-links a:hover {
+            color: #007BFF;
+        }
+
+        h1 {
+            padding: 20px 10px;
+            font-size: 1.8rem; /* Tamanho adaptável para títulos */
+        }
+
+        /* Responsividade para telas menores (Celulares) */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px;
+            }
+            
+            .navbar-links {
+                flex-direction: column; /* Transforma o menu em lista vertical no celular */
+                gap: 15px;
+                width: 100%;
+            }
+
+            .navbar-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 1.5rem; /* Diminui um pouco o título no celular */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Removido o style fixo de 760px da imagem -->
+    <a href="#">
+        <img src="Pink Aesthetic Beauty Skincare Logo (Etiquetas).jpg" alt="Logo Glau Croche">
+    </a>
+    <br>
+    <br>
+    <h1 style="text-align: center;">Conheça as nossas coleções</h1>
+    <br>
+    <br>
+
+    <nav class="navbar">
+        <!-- Links de Navegação -->
+        <ul class="navbar-links">
+            <li><a href="#Ninfa">Coleção Forças da Natureza (Ninfa & Gaia)</a></li>
+            <li><a href="#afrodite">Coleção Segredos de Afrodite (Vênus) </a></li>
+            <li><a href="#olimpo">Coleção Olimpo Clássico </a></li>
+        </ul>
+    </nav>
+
+    <!-- Removido o style fixo de 750px do ID log -->
+    <img id="log" src="image_854420ed.jpg" alt="Imagem de Destaque">
+    <br>
+    <br>
+    
+    <img id="dourado" src="escrita.png">
+
+
+    <!-- CÓDIGO DO CARROSSEL: Cole onde deseja que ele apareça na página -->
+<div class="custom-carousel-container">
+    <div class="custom-carousel-track">
+      <!-- Slide 1 -->
+      <div class="custom-carousel-slide">
+        <img src="WhatsApp Image 2026-09-20 at 08.59.48.jpeg" alt="Slide 1">
+      </div>
+      <!-- Slide 2 -->
+      <div class="custom-carousel-slide">
+        <img src="WhatsApp Image 2026-09-20 at 11.18.29.jpeg" alt="Slide 2">
+      </div>
+      <!-- Slide 3 -->
+      <div class="custom-carousel-slide">
+        <img src="WhatsApp Image 2026-09-20 at 11.18.30.jpeg" alt="Slide 3">
+      </div>
+    </div>
+  
+    <!-- Botões de Navegação -->
+    <button class="carousel-btn prev-btn" aria-label="Slide anterior">&#10094;</button>
+    <button class="carousel-btn next-btn" aria-label="Próximo slide">&#10095;</button>
+  </div>
+  
+  <!-- ESTILOS (CSS): Pode colar na sua folha de estilos existente ou dentro de <style> -->
+  <style>
+    .custom-carousel-container {
+      position: relative;
+      max-width: 500px; /* Altere para a largura máxima desejada */
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+  
+    .custom-carousel-track {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      width: 100%;
+    }
+  
+    .custom-carousel-slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+  
+    .custom-carousel-slide img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  
+    /* Botões */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 50%;
+      transition: background 0.3s;
+      z-index: 10;
+    }
+  
+    .carousel-btn:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  
+    .prev-btn { left: 15px; }
+    .next-btn { right: 15px; }
+  </style>
+  
+  <!-- COMPORTAMENTO (JavaScript): Cole antes do fechamento da tag </body> -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const track = document.querySelector(".custom-carousel-track");
+      const slides = document.querySelectorAll(".custom-carousel-slide");
+      const prevBtn = document.querySelector(".prev-btn");
+      const nextBtn = document.querySelector(".next-btn");
+      
+      let index = 0;
+  
+      function updateCarousel() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+  
+      nextBtn.addEventListener("click", () => {
+        index = (index + 1) % slides.length;
+        updateCarousel();
+      });
+  
+      prevBtn.addEventListener("click", () => {
+        index = (index - 1 + slides.length) % slides.length;
+        updateCarousel();
+      });
+  
+      // Opcional: Auto-play a cada 5 segundos
+      setInterval(() => {
+        nextBtn.click();
+      }, 5000);
+    });
+  </script>
+  <br>
+  <br>
+<div style="display: flexbox; font-size: 30px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;text-align: center;color: #433636;" >
+    <a href="#queima">Queima de estoque </a>
+    <br>
+
+    <a href="#depo">Depoimentos</a>
+
+    <br>
+    <a href="#contato">Contato</a>
+    <br>
+    <br>
+
+    <p>Nos siga nas redes sociais</p>
+
+</div>
+
+  
+       
+</body>
+</html>
+
+
+</body>
+
+</html>

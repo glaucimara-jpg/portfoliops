@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Produtos</title>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container Principal do Carrossel */
+        .carousel-container {
+            width: 100%;
+            max-width: 1200px;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        /* Grid do Carrossel com rolagem horizontal */
+        .carousel-grid {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc(33.333% - 14px); /* 3 itens por tela no desktop */
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+
+            padding-bottom: 15px;
+        }
+
+        /* Esconde a barra de rolagem padrão no Chrome/Safari/Opera */
+        .carousel-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Esconde a barra de rolagem no IE, Edge e Firefox */
+        .carousel-grid {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Cartão do Produto (Usa Flexbox para organizar o conteúdo verticalmente) */
+        .product-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Container da Imagem */
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #eaeaea;
+        }
+
+        /* Legenda/Conteúdo (Flexbox para alinhar textos e preço) */
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex-grow: 1; /* Garante que o rodapé alinhe mesmo com textos de tamanhos diferentes */
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            color: #333333;
+            font-weight: 600;
+        }
+
+        .product-description {
+            font-size: 0.9rem;
+            color: #666666;
+            line-height: 1.4;
+        }
+
+        /* Alinhamento do Preço no final do card */
+        .product-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 10px;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            color: #2ecc71;
+            font-weight: 700;
+        }
+
+        .buy-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .buy-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsividade (Media Queries) */
+        @media (max-width: 900px) {
+            .carousel-grid {
+                grid-auto-columns: calc(50% - 10px); /* 2 itens por tela em tablets */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .carousel-grid {
+                grid-auto-columns: 85%; /* 1 item parcial na tela para indicar que há mais itens */
+                gap: 15px;
+            }
+        }
+    </style>
+
+
+
+<body>
+
+    
+
+<div class="carousel-container">
+        <div class="carousel-grid">
+            
+            <!-- Card 1 -->
+            <div class="product-card">
+                <img src="https://picsum.photos" alt="Produto 1" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Smartphone Premium X</h3>
+                    <p class="product-description">Tela OLED de 6.7 polegadas, câmera tripla de 50MP e bateria de longa duração.</p>
+                    <div class="product-footer">
+                        <span class="product-price">R$ 4.599</span>
+                        <button class="buy-button">Ver mais</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="product-card">
+                <img src="https://picsum.photos" alt="Produto 2" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Fone de Ouvido Noise Cancelling</h3>
+                    <p class="product-description">Cancelamento de ruído ativo inteligente e até 40 horas de autonomia.</p>
+                    <div class="product-footer">
+                        <span class="product-price">R$ 1.299</span>
+                        <button class="buy-button">Ver mais</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="product-card">
+                <img src="https://picsum.photos" alt="Produto 3" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Smartwatch Sports Edition</h3>
+                    <p class="product-description">Monitoramento cardíaco avançado, GPS integrado e resistência à água de 50m.</p>
+                    <div class="product-footer">
+                        <span class="product-price">R$ 1.899</span>
+                        <button class="buy-button">Ver mais</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="product-card">
+                <img src="https://picsum.photos" alt="Produto 4" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Notebook Ultrafino Pro</h3>
+                    <p class="product-description">Processador de última geração, 16GB RAM e SSD de 512GB para máxima performance.</p>
+                    <div class="product-footer">
+                        <span class="product-price">R$ 6.499</span>
+                        <button class="buy-button">Ver mais</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+</div>
+
+</body>
+</html>
